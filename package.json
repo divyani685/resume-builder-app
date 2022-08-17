@@ -1,0 +1,27 @@
+{
+  "name": "resumeapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node":"16.14.2",
+    "npm":"8.5.0"
+  },
+  "scripts": {
+   "client-install":"npm install --prefix resume",
+   "server":"nodemon index.js",
+   "client":"npm start --prefix resume",
+    "dev":"concurrently \"npm run index\" \"npm run resume\"",
+    "start":"node index.js",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix resume && npm run build --prefix resume"
+
+  },
+  "author": "Divyani",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.5.2",
+    "nodemon": "^2.0.19"
+  }
+ 
+}
