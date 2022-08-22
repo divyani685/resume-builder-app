@@ -27,11 +27,7 @@ function Register() {
   })
   return (
     <>
-    <nav className="navbar bg-light">
-  <form className="container-fluid justify-content-end">
-    <button className="btn btn-sm btn-outline-secondary" type="button" onClick={()=>{navigate('/')}}>Go to Info page</button>
-  </form>
-</nav>
+    
     <div className="auth-parent">
       {loading && (<Spin size="large"/>)}
       <Form layout="vertical" onFinish={onFinish}>

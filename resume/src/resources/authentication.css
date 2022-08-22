@@ -1,18 +1,20 @@
+
 .auth-parent{
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    background-size: cover;
+    
 }
 .auth-parent form{
     width: 400px;
     box-shadow: 0 0 10px gray;
     padding: 20px;
-    /* background-color:rgba(6, 53, 33, 0.808); */
     background-color: rgba(0, 0, 0, 0.712);
-    /* border-radius: 5%; */
 }
+
 .auth-parent h1{
     font-size: 22px;
     font-weight: bold;
@@ -22,34 +24,35 @@
 .auth-parent label{
     color:white
 }
-.container{
-  
-    align-items: center;
-  width: 45%;
-  margin-top: 50px;
-  
-  overflow-y: none;
-  text-align: center;
-  padding: 20px;
-  color: white;
+.card{
+  margin: 0px auto; 
+  float: none;
+  margin-top: 8%; 
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+.card:hover{
+    transform: scale(1.2);
+}
+.infobody{
+    /* background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%); */
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    background-size: cover;
+    height: 100vh;
+    }
+.cheader{
+    font-size: 22px;
+    font-weight: bold;
+    padding: 2%;
+    margin-top: 20px;
 }
 
-.steps h5
-{
-    color: white;
+@media screen and (min-width: 1280px) , screen and (max-width: 1920px) {
+   .infobody{  overflow-x: hidden; overflow-y: hidden; }                     
+}
+.link{
+    margin-left: 8%;
     text-align: center;
+    color: rgba(255, 255, 255, 0.76);
     font-size: 15px;
-}
-.steps p{
-    text-align: left;
-}
-
-.navbar{
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1 !important;
-}
-.btn{
-    size: 10%;
+    
 }

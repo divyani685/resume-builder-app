@@ -1,63 +1,73 @@
-import React ,{useState,useEffect} from "react";
-import { Button, Form, Input,message,Spin} from "antd";
+import React, { useState, useEffect } from "react";
+import { Button, Form, Input, message, Spin } from "antd";
 import "../resources/authentication.css";
-import {Link,useNavigate} from "react-router-dom"
-import axios from "axios"
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 function Login() {
-  const [loading,setLoading]=useState(false)
-  const navigate=useNavigate()
-  const onFinish = async(values) => {
-    setLoading(true)
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const onFinish = async (values) => {
+    setLoading(true);
     console.log(values);
     try {
-      const user=await axios.post("api/user/Login", values);
+      const user = await axios.post("api/user/Login", values);
       message.success("Login successfull...");
-      localStorage.setItem("Resume-app",JSON.stringify(user.data))
-      setLoading(false)
-      navigate("/home")
+      localStorage.setItem("Resume-app", JSON.stringify(user.data));
+      setLoading(false);
+      navigate("/home");
     } catch (error) {
       console.log(error.response);
-      setLoading(false)
+      setLoading(false);
       message.error("Login failed!!!");
     }
   };
-  useEffect(()=>{
-    if(localStorage.getItem("Resume-app")){
-      navigate("/home")
+  useEffect(() => {
+    if (localStorage.getItem("Resume-app")) {
+      navigate("/home");
     }
-  })
+  });
   return (
     <>
-    
-   <body style={{height:"100vh"}}>
-   <nav className="navbar bg-light">
-  <form className="container-fluid justify-content-end">
-    <button className="btn btn-primary " type="button" onClick={()=>{navigate('/')}}>Go to Info page</button>
-  </form>
-</nav>
-    <div className="auth-parent">
-       {loading && (<Spin size="large"/>)}
+      <div className="auth-parent">
+        {loading && <Spin size="large" />}
+        <Form layout="vertical" onFinish={onFinish}>
+          <h1>Login</h1>
+          <hr />
+          <Form.Item name="username" label="Username:">
+            <Input />
+          </Form.Item>
+          <Form.Item name="password" label="Password:">
+            <Input type="password" />
+          </Form.Item>
+          <div className="d-flex align-items-center justify-content-between">
+            <Link to="/register" style={{ color: "white" }}>
+              Yet to Register??
+              <br />
+              Click here to Register...
+            </Link>
+            <Button type="primary" htmlType="submit">
+              Login
+            </Button>
+          </div>
+          
+        </Form>
+        <div
+            className="link "
+          >
+            <p>
+              <b>
+               <strong>Note </strong> : First go to the{" "}<br/>
+                <Link to="/">
+                  <b>info page</b>
+                </Link>
+                 to Know the procedure to download <br/>your resume then Login.
+              </b>
+            </p>
+          </div>
+      </div>
       
-      <Form layout="vertical" onFinish={onFinish}>
-        <h1>Login</h1>
-        <hr />
-        <Form.Item name="username" label="Username:">
-          <Input/>
-        </Form.Item>
-        <Form.Item name="password" label="Password:">
-          <Input type="password"/>
-        </Form.Item>
-        <div className="d-flex align-items-center justify-content-between">
-          <Link to="/register" style={{color:"white"}}>Yet to Register??<br/>Click here to Register...</Link>
-        <Button type="primary" htmlType="submit">
-          Login
-        </Button>
-        </div>
-      </Form>
-    </div>
-   </body>
     </>
   );
 }
 
-export default  Login;
+export default Login;

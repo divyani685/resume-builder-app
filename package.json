@@ -13,8 +13,8 @@
    "client":"npm start --prefix resume",
     "dev":"concurrently \"npm run index\" \"npm run resume\"",
     "start":"node index.js",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix resume && npm run build --prefix resume"
-
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix resume && npm run build --prefix resume",
+    "dev":"nodemon index"
   },
   "author": "Divyani",
   "license": "ISC",
