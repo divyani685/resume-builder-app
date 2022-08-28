@@ -1,7 +1,11 @@
-
+.login1{
+    display: flex;
+    flex-direction: column;
+}
 .auth-parent{
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
@@ -50,9 +54,12 @@
    .infobody{  overflow-x: hidden; overflow-y: hidden; }                     
 }
 .link{
-    margin-left: 8%;
+    /* margin-left:  */
+    margin-top: 60px;
+    justify-content: center;
     text-align: center;
-    color: rgba(255, 255, 255, 0.76);
+    align-items: center;
+    color: black;
     font-size: 15px;
     
 }
