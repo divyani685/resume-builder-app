@@ -56,11 +56,11 @@ function Login() {
           >
             <p>
               <b>
-               <strong>Note </strong> : First go to the{" "}<br/>
+               <strong>Note : </strong> First go to the{" "}<br/>
                 <Link to="/">
-                  <b>info page</b>
+                  <strong style={{color:"white",textDecoration:"underline",fontWeight:"bolder"}}>info page </strong>
                 </Link>
-                 to Know the procedure to download <br/>your resume then Login.
+                 to Know the procedure to download your resume then Login.
               </b>
             </p>
           </div>
